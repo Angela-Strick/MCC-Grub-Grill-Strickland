@@ -3,7 +3,7 @@
 // Date: 09/27/2022
 
 import java.util.Scanner;
-class FoodOrder {
+class Main {
   public static final double smallPizza = 8.99;
   public static final double mediumPizza = 11.99;
   public static final double largePizza = 14.99;
@@ -118,4 +118,10 @@ public void oneRoundOfOrders()
             System.out.println("Invalid Choice!");
     } // end of oneRoundOfOrders Method
   } // end of while loop
+
+  public void Main(String[]args)
+{
+  myMethod();
+  oneRoundOfOrders(); 
+}
 } // end of class
