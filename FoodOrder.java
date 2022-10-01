@@ -1,6 +1,7 @@
 // Author : Maya Strickland
 //Project Name : MCC Grub & Grill
 // Date: 09/27/2022
+
 import java.util.Scanner;
 class FoodOrder {
   public static final double smallPizza = 8.99;
@@ -115,7 +116,6 @@ public void oneRoundOfOrders()
           }
           else
             System.out.println("Invalid Choice!");
-           
     } // end of oneRoundOfOrders Method
   } // end of while loop
 } // end of class
