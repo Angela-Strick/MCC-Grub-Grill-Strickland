@@ -82,20 +82,20 @@ class Main {
           System.out.println("");
           TOTAL += SMALL_PIZZA;
           break;
-          
+
         case 2:
           System.out
               .println("You've chosen a medium pizza! A pizza big enough to share...or not " + "$" + MEDIUM_PIZZA);
           System.out.println("");
           TOTAL += MEDIUM_PIZZA;
           break;
-          
+
         case 3:
           System.out.println("You've chosen a large pizza! Pizza for the whole family to enjoy " + "$" + LARGE_PIZZA);
           System.out.println("");
           TOTAL += LARGE_PIZZA;
           break;
-          
+
         case 4:
           System.out.println(
               "You've chosen a veggie burger! A black bean burger with Tomato, Mayo, Lettuce, and PepperJack Cheese. "
@@ -103,7 +103,7 @@ class Main {
           System.out.println("");
           TOTAL += VEGGIE_BURGER;
           break;
-          
+
         case 5:
           System.out.println(
               "You've chosen grilled chicken sandwich! Grilled Chicken topped with Tomato, Mayo, Lettuce, PepperJack Cheese. "
@@ -118,54 +118,56 @@ class Main {
           System.out.println("");
           TOTAL += HAMBURGER_SANDWICH;
           break;
-          
+
         case 7:
           System.out.println(
               "You've chosen mac and cheese! Not your momma's mac! This mac is spicy! Beware! " + "$" + MAC_AND_CHEESE);
           TOTAL += MAC_AND_CHEESE;
           System.out.println("");
           break;
-          
+
         case 8:
           System.out.println(
               "You've chosen hand cut fries! Crisp, golden fries deep fried in peanut oil " + "$" + HAND_CUT_FRIES);
           TOTAL += HAND_CUT_FRIES;
           System.out.println("");
           break;
-          
+
         case 9:
           System.out.println("You've chosen onion rings! Crisp, golden rings of onion " + "$" + ONION_RINGS);
           System.out.println("");
           TOTAL += ONION_RINGS;
           break;
-          
+
         default:
           System.out.println("Invalid Entry! Try Again");
-          System.out.println("");
-          myMenu();
           oneRoundOfOrders();
           break;
+          
       } // end of switch statement
-      System.out.println("");
-      // Asks the user if they would like to order more food
       System.out.println("Press 1 to order more food or 0 to proceed to checkout");
       // Code that reads keyboard input from the user
       orderAgain = input.nextInt();
       if (orderAgain == 1) {
         myMenu();
         oneRoundOfOrders();
-      } else if (orderAgain == 0) {
+      } 
+      else if (orderAgain == 0) 
+      {
         foodTax = TOTAL * (FOOD_TAX_RATES / 100);
         System.out.println("Your tax on the total is this: " + "$" + foodTax);
         createBill();
-      } else
-        System.out.println("");
-        System.out.println("Invalid Choice!");
-        System.out.println("");
-        myMenu();
-        oneRoundOfOrders();
-    } // end of oneRoundOfOrders Method
-  } // end of while loop
+      }
+      else
+      {
+      System.out.println("");
+      System.out.println("Invalid Choice!");
+      System.out.println("");
+      myMenu();
+      oneRoundOfOrders();
+      }
+    } // end of while loop
+  } // end of oneRoundOfOrders Method
 
   // Method to generate the bill based off of what the user ordered
   public static void createBill() {
@@ -173,7 +175,8 @@ class Main {
     System.out.println("");
     System.out.println("Your current total without a tip is: " + "$" + TOTAL);
     System.out.println("");
-    System.out.println("Please enter 0 to add no tip, 1 to add a 5% tip, 2 to add a 10% tip, 3 to add a 15% tip, or 4 to add a 20% tip");
+    System.out.println(
+        "Please enter 0 to add no tip, 1 to add a 5% tip, 2 to add a 10% tip, 3 to add a 15% tip, or 4 to add a 20% tip");
     System.out.println("");
     tipInput = input.nextInt();
     switch (tipInput) {
@@ -187,22 +190,19 @@ class Main {
         TOTAL *= FIVE_PERCENT_TIP_RATE;
         System.out.println("Your final total is: " + "$" + TOTAL);
         break;
-        
+
       case 2:
         System.out.println("Thank you for the tip!");
-        TOTAL *= TEN_PERCENT_TIP_RATE;
+        TOTAL = TOTAL + (TOTAL * TEN_PERCENT_TIP_RATE);
         System.out.println("Your final total is: " + "$" + TOTAL);
         break;
-        
+
       case 3:
         System.out.println("Thank you for the tip!");
         TOTAL *= TWENTY_PERCENT_TIP_RATE;
         System.out.println("Your final total is: " + "$" + TOTAL);
         break;
         
-      default:
-        System.out.println("Invalid Choice! Tip will not be added");
-        System.out.println("Your final total is: " + "$" + TOTAL);
     } // end of switch for tip
   } // end of method createBill
 
@@ -210,5 +210,5 @@ class Main {
     myMenu();
     oneRoundOfOrders();
     createBill();
- }
+  }
 } // end of class
