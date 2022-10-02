@@ -179,25 +179,30 @@ class Main {
     switch (tipInput) {
       case 0:
         System.out.println("No tip will be added to your bill! Shame on you!");
+        System.out.println("Your final total is: " + "$" + TOTAL);
         break;
 
       case 1:
         System.out.println("Thank you for the tip!");
         TOTAL *= FIVE_PERCENT_TIP_RATE;
+        System.out.println("Your final total is: " + "$" + TOTAL);
         break;
         
       case 2:
         System.out.println("Thank you for the tip!");
         TOTAL *= TEN_PERCENT_TIP_RATE;
+        System.out.println("Your final total is: " + "$" + TOTAL);
         break;
         
       case 3:
         System.out.println("Thank you for the tip!");
         TOTAL *= TWENTY_PERCENT_TIP_RATE;
+        System.out.println("Your final total is: " + "$" + TOTAL);
         break;
         
       default:
-        System.out.println("Invalid Choice! Try Again");
+        System.out.println("Invalid Choice! Tip will not be added");
+        System.out.println("Your final total is: " + "$" + TOTAL);
     } // end of switch for tip
   } // end of method createBill
 
@@ -205,5 +210,5 @@ class Main {
     myMenu();
     oneRoundOfOrders();
     createBill();
-  }
+ }
 } // end of class
